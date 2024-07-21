@@ -7,7 +7,7 @@ public class playerController : MonoBehaviour
     public float playerSpeed;
 
     public Rigidbody2D rb;
-    //public Animator animator;
+
     public Camera cam;
 
     public Vector2 movement;
@@ -15,13 +15,11 @@ public class playerController : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //get input for moving
@@ -42,7 +40,7 @@ public class playerController : MonoBehaviour
 
         //look towards mouse
         Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x)* Mathf.Rad2Deg - 90f;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x)* Mathf.Rad2Deg;
         rb.rotation = angle;
 
     }
